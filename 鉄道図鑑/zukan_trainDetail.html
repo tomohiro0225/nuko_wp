@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ほしてつの鉄道写真館-車両詳細-</title>
+    <link rel="stylesheet" href="./assets/css/zukan.css">
+    <link rel="stylesheet" href="./assets/css/zukan_trainDetail.css">
+    <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=RocknRoll+One&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
+</head>
+<body >
+    <!-- ローダー -->
+    <div class="loading">
+        <div class="kvArea loading__wrap">
+          <div class="loading__inner"><img src="./assets/img/others/loading.png" alt="" class="loading__img"></div>
+        </div>
+    </div>
+
+    <!-- ヘッダー -->
+    <header class="l-header">
+        <div class="l-header__wrap">
+            <div class="l-header__name">
+                <h1 class="site-name">
+                    <img src="./assets/img/others/SiteTitle_en.jpg" alt="">
+                </h1>
+            </div>
+            <nav class="l-header__nav">
+                <ul class="l-header__menuList">
+                    <li class="l-header__menuLink"><a href="#">SiteTOPに上がる</a></li>
+                    <li class="l-header__menuLink "><a href="http://hoshitetsu-photo.com/">ほしてつの鉄道図鑑TOP</a></li>
+                    <li class="l-header__menuWrap">
+                        <p class="l-header__menuOuter" data-accordion="menuOuter"><a href="./zukan_top.html">鉄道図鑑</a></p>
+                        <div class="l-header__menuInner" data-accordion="menuInner">
+                            <p class="l-header__menuLink bgblue">
+                                <a href="./zukan_company.html?company_en=JR-West">JR西日本</a>
+                            </p>
+                            <p class="l-header__menuLink bgblue">
+                                <a href="./zukan_company.html?company_en=hanshin">阪神電気鉄道</a>
+                            </p>
+                            <p class="l-header__menuLink bgblue">
+                                <a href="./zukan_company.html?company_en=sanyo">山陽電気鉄道</a>
+                            </p>
+                            <p class="l-header__menuLink bgblue">
+                                <a href="./zukan_company.html?company_en=Hokuetsu-Express">北越急行</a>
+                            </p>
+                          </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+        <div class="l-header__menuTrigger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <main class="contents" id="Detail">
+        
+        <!-- リンクルート -->
+        <p class="linkRoute commonWidth">
+            <a href="http://hoshitetsu-photo.com/"><span class="linkRoute__top">ほしてつの鉄道写真館TOP</span></a>
+            <span class="linkRoute__right">></span>
+            <a href="./zukan_top.html"><span class="linkRoute__top">鉄道図鑑</span></a>
+            <span class="linkRoute__right">></span>
+            <a href="" id="company_name"><span class="linkRoute__top" data-train-parts="company_ja"></span></a>
+            <span class="linkRoute__right">></span>
+            <span class="linkRoute__nowPage">
+                <span data-train-parts="company_ja"></span>
+                <span data-train-parts="series"></span>
+                <span data-train-parts="colors"></span>
+            </span>
+        </p>
+
+        <!-- 車両写真 -->
+        <div class="p-trainImg">
+            <p class="p-trainImg__series">
+                <span data-train-parts="company_ja"></span>
+                <span data-train-parts="series"></span><br>
+                <span class="p-trainImg__series__span" data-train-parts="colors"></span>
+            </p>
+            <div class="p-trainImg__wrap">
+                <img src="" alt="" class="p-trainImg__image">
+                <p class="p-trainImg__place">(撮影地:<span data-train-parts="place"></span>)</p>
+            </div>
+        </div>
+
+        <!-- 車両説明 -->
+        <section class="commonWidth">
+            
+            <h3 class="c-sectionTitle mt-20">車両データ</h3>
+            <p class="trainData">
+                <span>・運行路線</span><br>
+                <span data-train-parts="company_lines"></span><br>
+                <span data-train-parts="other_company_lines"></span><br><br>
+                <span>・車両説明</span><br>
+                <span data-train-parts="explanatory_text"></span>
+            </p>
+
+        </section>
+
+        <!-- ピックアップ -->
+        <section class="commonWidth">
+            
+            <h3 class="c-sectionTitle">鉄道車両ピックアップ</h3>
+            <div class="p-trainList" data-train-list="pickup">
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer class="l-footer">
+        <p class="l-footer__copyright">
+            ©Copyright Hoshitetsu 2022
+        </p>
+    </footer>
+
+    <!-- JS -->
+    <script src="./assets/js/train_data.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="./assets/js/zukan.js"></script>
+</body>
+</html>

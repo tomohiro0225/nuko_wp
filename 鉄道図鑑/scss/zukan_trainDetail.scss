@@ -1,0 +1,85 @@
+
+
+
+// 車両写真とデータ
+.p-trainImg{
+    margin-top: 40px;
+    &__series{
+        padding: 30px 20px;
+        line-height: 4.2rem;
+        font-size: 2.8rem;
+        font-weight: bold;
+        text-align: center;
+        color: #081BBB;
+        letter-spacing: 5px;
+        text-shadow: #fff 2px 2px 2px;
+    }
+    &__wrap{
+        max-width: 800px;
+        padding: 0 20px;
+        padding-bottom: 40px;
+        margin: 0 auto;
+    }
+    &__image{
+        box-shadow: 5px 5px 2px rgba($color: #333, $alpha: 0.8);
+    }
+    &__place{
+        margin-top: 20px;
+        font-size: 1.25rem;
+    }
+}
+
+// 車両データ
+.trainData{
+    font-size: 1.5rem;
+    padding: 0 20px;
+    line-height: 3rem;
+    font-weight: bold;
+}
+
+@media screen and (max-width:920px) {
+    // 車両写真とデータ
+    .p-trainImg{
+        margin-top: 20px;
+        &__series{
+            padding: 20px;
+            font-size: 2.5rem;
+            letter-spacing: 1px;
+        }
+    
+    }
+    
+}
+
+@media screen and (max-width:768px) {
+
+    // 車両写真とデータ
+    .p-trainImg{
+        margin-top: 20px;
+        &__series{
+            padding: 20px;
+            font-size: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 2.25rem;
+            &__span{
+                display: block;
+            }
+        }
+        &__wrap{
+            padding: 0 20px;
+            padding-bottom: 40px;
+            margin: 0 auto;
+        }
+        &__place{
+            margin-top: 15px;
+            font-size: 0.9rem;
+        }
+    
+    }
+    // 車両データ
+    .trainData{
+        font-size: 1rem;
+        line-height: 1.5rem;
+    }
+}
+
