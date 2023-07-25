@@ -3,9 +3,7 @@
     <main class="contents" id="zukanTop">
         <!-- ページルート -->
     <p class="linkRoute commonWidth">
-        <a href="http://hoshitetsu-photo.com/"><span class="linkRoute__top">ほしてつの鉄道写真館TOP</span></a>
-        <span class="linkRoute__right">></span>
-        <span class="linkRoute__nowPage">鉄道図鑑</span>
+        <a href="localhost"><span class="linkRoute__top">鉄道図鑑TOP</span></a>
     </p>
 
     <!-- ページタイトル -->
@@ -55,41 +53,47 @@
         </ul>
     </div>
 
-    <!-- 会社別メニュー -->
-    <section class="commonWidth">
-        
-        <h3 class="c-sectionTitle">車両別メニュー(JR)</h3>
-        <div class="p-companyList">
-            <a href="./zukan_company.html" class="p-companyList__item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner/JR-West_banner.png" alt="">
-            </a>
-        </div>
-
-        <h3 class="c-sectionTitle">車両別メニュー(大手私鉄・準大手私鉄)</h3>
-        <div class="p-companyList">
-            <a href="./zukan_company.html" class="p-companyList__item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner/hanshin_banner.png" alt="">
-            </a>
-            <a href="./zukan_company.html" class="p-companyList__item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner/sanyo_banner.png" alt="">
-            </a>
-        </div>
-
-        <!-- 地方私鉄・第三セクターメニュー -->
-        <h3 class="c-sectionTitle">車両別メニュー(地方私鉄・第三セクター)</h3>
-        <div class="p-companyList">
-            <a href="./zukan_company.html" class="p-companyList__item">
-                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/banner/Hokuetsu-Express_banner.png" alt="">
-            </a>
-        </div>
-
-    </section>
-
     <!-- ピックアップ -->
     <section class="commonWidth">
         
         <h3 class="c-sectionTitle">鉄道車両ピックアップ</h3>
         <div class="p-trainList">
+            <div class="p-trainList__item" >
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
+                <div class="p-trainList__wrap">
+                    <p class="p-trainList__series">
+                        <span>阪神電気鉄道１０００系</span><br>
+                        <span>色の指定が入る</span>
+                    </p>
+                    <div class="c-btn">
+                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-trainList__item" >
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
+                <div class="p-trainList__wrap">
+                    <p class="p-trainList__series">
+                        <span>阪神電気鉄道１０００系</span><br>
+                        <span>色の指定が入る</span>
+                    </p>
+                    <div class="c-btn">
+                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
+                    </div>
+                </div>
+            </div>
+            <div class="p-trainList__item" >
+                <img src="<?php echo get_template_directory_uri(); ?>/assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
+                <div class="p-trainList__wrap">
+                    <p class="p-trainList__series">
+                        <span>阪神電気鉄道１０００系</span><br>
+                        <span>色の指定が入る</span>
+                    </p>
+                    <div class="c-btn">
+                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
+                    </div>
+                </div>
+            </div>
             <div class="p-trainList__item" >
                 <img src="<?php echo get_template_directory_uri(); ?>/assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
                 <div class="p-trainList__wrap">
