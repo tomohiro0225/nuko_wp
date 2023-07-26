@@ -1,5 +1,10 @@
 <?php get_header(); ?>
 
+<!-- 
+    https://plusers.net/wordpress_related_post
+    👆他の記事出力を参考にした記事
+ -->
+
     <main class="contents" id="Detail">
         
         <!-- リンクルート -->
@@ -17,16 +22,16 @@
             </span>
         </p>
 
+
         <!-- 車両写真 -->
         <div class="p-trainImg">
             <p class="p-trainImg__series">
-                <span >阪神電気鉄道</span>
-                <span >1000系</span><br>
-                <span class="p-trainImg__series__span">色の指定が入る</span>
+                <span></span><br>
+                <span class="p-trainImg__series__span"><?php echo get_field('train_color'); ?></span>
             </p>
             <div class="p-trainImg__wrap">
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainImg__image">
-                <p class="p-trainImg__place">(撮影地:<span>阪神本線甲子園駅</span>)</p>
+                <img src="<?php echo get_field('train_img'); ?>" alt="<?php the_title(); ?>" class="p-trainImg__image">
+                <p class="p-trainImg__place">(撮影地:<span><?php echo get_field('train_place'); ?></span>)</p>
             </div>
         </div>
 
@@ -34,13 +39,13 @@
         <section class="commonWidth">
             
             <h3 class="c-sectionTitle mt-20">車両データ</h3>
-            <p class="trainData">
+            <div class="trainData">
                 <span>・運行路線</span><br>
-                <span>阪神本線・阪神なんば線・神戸高速線</span><br>
-                <span>(直通先路線)近鉄難波線・近鉄奈良線・山陽電鉄本線</span><br><br>
+                <span>(自社線)<?php echo get_field('train_route_company'); ?></span><br>
+                <span>(直通先路線)<?php echo get_field('train_route_other-company'); ?></span><br><br>
                 <span>・車両説明</span><br>
-                <span>2009年の阪神なんば線開業に伴う近鉄との相互直通運転に備えて作られた車両。阪神9000系とともに主に阪神なんば線と相互直通先の近鉄奈良線で活躍するほか、時折山陽電鉄へ乗り入れて姫路まで顔を出すこともある。</span>
-            </p>
+                <span><?php echo get_field('train_explanation'); ?></span>
+            </div>
 
         </section>
          <!-- ピックアップ -->
@@ -48,42 +53,41 @@
         
         <h3 class="c-sectionTitle">鉄道車両ピックアップ</h3>
         <div class="p-trainList">
+
+            <?php if(has_category() ) {
+            $cats =get_the_category();
+            $catkwds = array();
+            foreach($cats as $cat){
+                $catkwds[] = $cat->term_id;
+            }
+            } ?>
+            	
+            <?php $args = array(
+            'post_type' => 'train',
+            'posts_per_page' => '6',
+            'post__not_in' =>array( $post->ID ),
+            'category__in' => $catkwds,
+            'orderby' => 'rand'
+            );
+            $my_query = new WP_Query( $args );?>
+            <?php while ( $my_query->have_posts() ) : $my_query->the_post(); ?>
             <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
+                <img src="<?php echo get_field('train_img'); ?>" alt="<?php the_title(); ?>" class="p-trainList__img">
                 <div class="p-trainList__wrap">
                     <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
+                        <span><?php the_title(); ?></span><br>
+                        <span><?php echo get_field('train_color'); ?></span>
                     </p>
                     <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?>を見る！</a>
                     </div>
                 </div>
             </div>
-            <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
-                <div class="p-trainList__wrap">
-                    <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
-                    </p>
-                    <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
-                    </div>
-                </div>
-            </div>
-            <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
-                <div class="p-trainList__wrap">
-                    <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
-                    </p>
-                    <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
-                    </div>
-                </div>
-            </div>
+            
+            	
+            <?php endwhile; ?>
+            <?php wp_reset_postdata(); ?>
+                    
         </div>
 
     </section>   

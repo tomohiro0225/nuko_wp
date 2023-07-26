@@ -20,43 +20,26 @@
     <section class="commonWidth">
         
         <h3 class="c-sectionTitle">鉄道車両ピックアップ</h3>
-        <div class="p-trainList" data-train-list="pickup">
+        <div class="p-trainList">
+
+            <?php if (have_posts()) : ?>
+            <?php while (have_posts()) : the_post(); ?>
+
             <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
+                <img src="<?php echo get_field('train_img'); ?>" alt="<?php the_title(); ?>" class="p-trainList__img">
                 <div class="p-trainList__wrap">
                     <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
+                        <span><?php the_title(); ?></span><br>
+                        <span><?php echo get_field('train_color'); ?></span>
                     </p>
                     <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
+                        <a href="<?php the_permalink(); ?>"><?php the_title(); ?>を見る！</a>
                     </div>
                 </div>
             </div>
-            <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
-                <div class="p-trainList__wrap">
-                    <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
-                    </p>
-                    <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
-                    </div>
-                </div>
-            </div>
-            <div class="p-trainList__item" >
-                <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
-                <div class="p-trainList__wrap">
-                    <p class="p-trainList__series">
-                        <span>阪神電気鉄道１０００系</span><br>
-                        <span>色の指定が入る</span>
-                    </p>
-                    <div class="c-btn">
-                        <a href="./zukan_trainDetail.html">阪神電気鉄道１０００系を見る！</a>
-                    </div>
-                </div>
-            </div>
+            
+            <?php endwhile; endif; ?>
+
         </div>
 
     </section>   
@@ -65,7 +48,7 @@
     <section class="commonWidth">
         
         <h3 class="c-sectionTitle">鉄道車両ピックアップ</h3>
-        <div class="p-trainList" data-train-list="pickup">
+        <div class="p-trainList">
             <div class="p-trainList__item" >
                 <img src="./assets/img/zukan/hanshin/hanshin_1000.jpg" alt="hanshin1000" class="p-trainList__img">
                 <div class="p-trainList__wrap">

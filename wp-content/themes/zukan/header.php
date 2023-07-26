@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/slick/slick-theme.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/zukan.css">
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/zukanTop.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/zukan_company.css">
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/zukan_trainDetail.css">
     <link href="https://fonts.googleapis.com/css2?family=Mr+Dafoe&family=RocknRoll+One&family=Zen+Maru+Gothic&display=swap" rel="stylesheet">
 </head>
 <body>
